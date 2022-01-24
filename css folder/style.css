@@ -3,12 +3,19 @@
     margin: 0%;
     box-sizing: border-box;
 }
+body{
+    max-width: 100%;
+}
 header{
     height: 16vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
 }
 .navbar{
     width: 50%;
@@ -96,6 +103,7 @@ header{
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(51, 51, 51, 0.651);
+    backdrop-filter: blur(10px);
 }
 .little-text-container{
     width: 60%;
@@ -144,6 +152,7 @@ header{
     justify-content: center;
     padding: 3px;
 }
+
 .circle img{
     height: 100%;
     width: 100%;
@@ -158,22 +167,261 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: rgba(17, 17, 17, 0.479); */
+    margin: 30px;
 }
 .project-text-container h1{
     margin: auto;
     font-family: poppins;
     font-size: 2.5rem;
     text-transform: capitalize;
-    border: 2px solid black;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgb(39, 39, 39);
-}
-.black-bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding:15px;
     background-color: rgb(0, 0, 0);
     color: white;
-    /* padding: 10px; */
-    width: 40%;
+}
+.project-card-container{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    /* background-color:rgba(0, 0, 0, 0.123); */
+}
+.project-card1,.project-card2,.project-card3,.project-card4{
+    width: 30%;
+    height: 80%;
+    position: relative;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-card4:hover{
+    transform: scale(.99);
+}
+.project-card3:hover{
+    transform: scale(.99);
+}
+.project-card2:hover{
+    transform: scale(.99);
+}
+.project-card1:hover{
+    transform: scale(.99);
+}
+.project-card4::after{
+    content: " ";
+    width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+    position: absolute;
+    mix-blend-mode: overlay;
+    top: 0%;
+    z-index: 1;
+}
+.project-card3::after{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+    position: absolute;
+    mix-blend-mode: overlay;
+    top: 0%;
+}
+.project-card2::after{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    mix-blend-mode: overlay;
+    top: 0%;
+}
+.project-card1::after{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+    position: absolute;
+    mix-blend-mode: overlay;
+    top: 0%;
+}
+.project-card1{
+    background-image: url(../images/girl\ \(1\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.project-card2{
+    background-image: url(../images/bamford.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.project-card3{
+    background-image: url(../images/guiter\ \(1\).jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.project-card4{
+    background-image: url(../images/img\ \(1\).jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.title-div{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1px);
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.title-p{
+    /* width: 100%; */
+    margin-right: auto;
+    height: 10%;
+    text-align: left;
+    color: white;
+    padding: 5px;
+    background-color:black;
+    font-family: varela round;
+    backdrop-filter: blur(7px);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    z-index: 2;
+}
+.title{
+    height: 40%;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.322);
+    color: white;
+    padding: 5px;
+    font-family: ubuntu;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-transform: capitalize;   
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+
+}
+
+/*  */
+.projects{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+.project-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.project-title{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    margin: 30px;
+    background-color: rgba(12, 12, 12, 0.151);
+    flex-direction: column;
+    padding: 20px;
+}
+.project-title h1{
+    font-size: 3rem;
+    font-family: poppins;
+    background-color: black;
+    box-shadow: 0px 0px 10px rgb(39, 39, 39);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items:canter ;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.project-title p{
+    font-family: varela round;
+    line-height: 25px;
+}
+.project-img-container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.biggest-img{
+    width: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    height: 50%;
+    margin: 2px;
+}
+.smaller-img{
+    width: 100%;
+    max-width: 100%;
+    margin: 2px;
+}
+.best{
+    font-weight: bolder;
+}
+.left-img-div{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2.5px;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.right-img-div{
+    margin: 2.5px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.projects-flipped{
+    height: auto;
+    width: 100%;
+}
+.projects-flipped .project-container{
+    flex-direction: row-reverse;
+}
+footer p{
+    font-size: .8rem;
+    font-family: poppins;
+    color: white;
+}
+
+footer{
+    width: 100%;
+    height: 15vh;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     padding: 5px;
 }
