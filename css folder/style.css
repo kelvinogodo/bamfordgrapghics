@@ -445,6 +445,7 @@ button {
 .project-title p{
     font-family: varela round;
     line-height: 25px;
+    margin-top: 30px;
 }
 .glow-btn-container{
     width: 100%;
@@ -459,8 +460,8 @@ button {
     padding: 1em 1.8em;
     outline: none;
     border: 1px solid #303030;
-    background: #212121;
-    color: color;
+    background: black;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 15px;
@@ -470,6 +471,7 @@ button {
     cursor: pointer;
     font-weight: bold;
     width: 60%;
+    font-family: ubuntu;
    }
    
    .btn-glow:hover {
@@ -929,6 +931,9 @@ footer{
     .project-title h1{
         font-size: 1.5rem;
         margin-bottom: 20px;
+    }
+    .project-title p{
+        margin-top: 0px;
     }
     .projects-flipped .project-container{
         flex-direction: column;
