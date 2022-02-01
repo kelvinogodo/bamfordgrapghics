@@ -317,7 +317,7 @@ header{
    }
    
    .cssbuttons-io-button .icon {
-    background: black;
+    background: white;
     margin-left: 1em;
     position: absolute;
     display: flex;
@@ -338,7 +338,7 @@ header{
    .cssbuttons-io-button .icon svg {
     width: 1.1em;
     transition: transform 0.3s;
-    color: white;
+    color: black;
    }
    
    .cssbuttons-io-button:hover .icon svg {
@@ -349,9 +349,9 @@ header{
     transform: scale(0.95);
    }
 .title{
-    height: 40%;
+    height: 100%;
     width: 100%; 
-    background-color: rgba(0, 0, 0, 0.322);
+    background-color:rgba(0, 0, 0, 0.322);
     color: white;
     padding: 5px;
     font-family: ubuntu;
@@ -362,7 +362,7 @@ header{
     backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 
 /*  */
@@ -614,9 +614,10 @@ header{
     word-spacing: 3px;
     color: white;
     font-size: 1.2rem;
+    font-family: roboto;
 }
 .contact-btn-container{
-    width: 80%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -865,6 +866,7 @@ footer{
         margin: auto;
         padding: 2px;
         font-size: 1.7rem;
+        height: 100px;
     }
     .project-card-container{
         flex-direction: column;
@@ -874,11 +876,8 @@ footer{
         width: 95%;
         height: 300px;
     }
-    .title-p{
-       text-decoration: none;
-       height: 50px;
-       width: 120px;
-       z-index: 0;
+    .title{
+        text-align: center;
     }
     .project-container{
         flex-direction: column;
