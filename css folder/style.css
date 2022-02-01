@@ -230,6 +230,7 @@ header{
     position: absolute;
     mix-blend-mode: overlay;
     top: 0%;
+    z-index: -1;
 }
 .project-card3::after{
     content: " ";
@@ -294,60 +295,97 @@ header{
     flex-direction: column;
 }
 
-/* From cssbuttons.io by @adamgiebl */
-.cssbuttons-io-button {
-    background: black;
-    color: white;
-    font-family: inherit;
-    padding: 0.35em;
-    padding-left: 1.2em;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
-    overflow: hidden;
+/* From cssbuttons.io */
+button {
     position: relative;
-    height: 2.8em;
-    padding-right: 3.3em;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+   }
+   
+   button.learn-more {
+    width: 12rem;
+    height: auto;
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: rgb(58, 57, 57);
+    border-radius: 1.625rem;
+    backdrop-filter: blur(5px);
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   
+   .learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   .learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   .learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: white;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
     font-family: ubuntu;
    }
    
-   .cssbuttons-io-button .icon {
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-    right: 0.3em;
-    transition: all 0.3s;
+   button:hover .circle {
+    width: 100%;
    }
    
-   .cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
+   button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
    }
    
-   .cssbuttons-io-button .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: black;
+   button:hover .button-text {
+    color: #fff;
    }
    
-   .cssbuttons-io-button:hover .icon svg {
-    transform: translateX(0.1em);
-   }
-   
-   .cssbuttons-io-button:active .icon {
-    transform: scale(0.95);
-   }
 .title{
     height: 100%;
     width: 100%; 
@@ -624,7 +662,7 @@ header{
     margin-top: 50px;
 }
 
- button {
+ .about-btn {
     --btn-color: black;
     position: relative;
     padding: 16px 32px;
@@ -643,7 +681,7 @@ header{
     text-transform: capitalize;
    }
    
-   button::before {
+   .about-btn::before {
     position: absolute;
     content: "";
     top: 0;
@@ -656,27 +694,27 @@ header{
     transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
    }
    
-   button span,
-   button span span {
+   .about-btn span,
+   .about-btn span span {
     display: inline-flex;
     vertical-align: middle;
     transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
    }
    
-   button span {
+   .about-btn span {
     transition-delay: 0.05s;
    }
    
-   button span:first-child {
+   .about-btn span:first-child {
     padding-right: 7px;
    }
    
-   button span span {
+   .about-btnspan span {
     margin-left: 8px;
     transition-delay: 0.1s;
    }
    
-   button ul {
+   .about-btn ul {
     position: absolute;
     top: 50%;
     left: 0;
@@ -688,31 +726,31 @@ header{
     transform: translateY(-50%);
    }
    
-   button ul li {
+   .about-btn ul li {
     flex: 1;
    }
    
-   button ul li a {
+   .about-btn ul li a {
     display: inline-flex;
     vertical-align: middle;
     transform: translateY(55px);
     transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
    }
    
-   button ul li a:hover {
+   .about-btn ul li a:hover {
     opacity: 0.5;
    }
    
-   button:hover::before {
+   .about-btn:hover::before {
     transform: scale(1.2);
    }
    
    button:hover span,
-   button:hover span span {
+   .about-btn:hover span span {
     transform: translateY(-55px);
    }
    
-   button:hover ul li a {
+   .about-btn:hover ul li a {
     transform: translateY(0);
    }
    
@@ -720,11 +758,11 @@ header{
     transition-delay: 0.15s;
    }
    
-   button:hover ul li:nth-child(2) a {
+   .about-btn:hover ul li:nth-child(2) a {
     transition-delay: 0.2s;
    }
    
-   button:hover ul li:nth-child(3) a {
+   .about-btn:hover ul li:nth-child(3) a {
     transition-delay: 0.25s;
    }
    
